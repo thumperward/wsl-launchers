@@ -1,0 +1,5 @@
+# windows binary shortcuts
+*.lnk
+
+# nohup just in case
+nohup.out
