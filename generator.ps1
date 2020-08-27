@@ -1,3 +1,5 @@
+# wsl sudo apt install -y --no-install-recommends $Args[0]
+
 # $SourceFileLocation = "$env:SystemRoot/System32/notepad.exe"
 $SourceFileLocation = "$env:SystemRoot/System32/wscript.exe"
 $ShortcutLocation = "$pwd/" + $Args[0] + ".lnk"
@@ -19,6 +21,7 @@ Else {
 
 # $Shortcut.Hotkey = "ALT+CTRL+F"
 # $Shortcut.WorkingDirectory = "c:\"
+
 # these need fixed
 # $Shortcut.SpecialFolders("Desktop")
 # $Shortcut.WindowStyle = 3  &&Maximized 7=Minimized  4=Normal
