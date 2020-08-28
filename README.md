@@ -27,7 +27,7 @@ documentation](https://x410.dev/cookbook/wsl/opening-linux-terminal-directly-fro
 
 1.  Install whatever package is to have the shortcut created (using e.g. `apt`)
 2.  Install a nice GTK theme, e.g. `Arc` (`sudo apt install arc-theme`)
-3.  Add `DISPLAY` and `GDK_THEME` Windows environment variables and then export
+3.  Add `DISPLAY` and `GTK_THEME` Windows environment variables and then export
     them using the magic `WSLENV` variable:
     ```
     GTK_THEME=Arc:dark
