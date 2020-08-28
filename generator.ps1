@@ -1,6 +1,5 @@
 # wsl sudo apt install -y --no-install-recommends $Args[0]
 
-# $SourceFileLocation = "$env:SystemRoot/System32/notepad.exe"
 $SourceFileLocation = "$env:SystemRoot/System32/wscript.exe"
 $ShortcutLocation = "$pwd/" + $Args[0] + ".lnk"
 
