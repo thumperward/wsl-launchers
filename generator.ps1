@@ -11,11 +11,12 @@ $Shortcut.TargetPath = $SourceFileLocation
 $Shortcut.IconLocation = "$env:SystemRoot/System32/wsl.exe"
 # $Shortcut.IconLocation = "C:\myicon.ico"
 # $Shortcut.IconLocation = "$env:SystemRoot/System32/shell32.dll,3"
-If ($Args.Count > 2) {
+
+# if a second argument is provided use that as the command to run instead
+If ($Args.Count -lt 2) {
   $Shortcut.Arguments = "$pwd\wsl.vbs " + $Args[0]
 }
 Else {
-  # $Shortcut.Arguments = "$pwd\wsl.vbs" + ' "nohup ~/pycharm-community-2020.2.1/bin/pycharm.sh >/dev/null 2>&1"'
   $Shortcut.Arguments = "$pwd\wsl.vbs" + ' ' + $Args[1]
 }
 
