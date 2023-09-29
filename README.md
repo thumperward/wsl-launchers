@@ -35,7 +35,8 @@ documentation](https://x410.dev/cookbook/wsl/opening-linux-terminal-directly-fro
     WSLENV=DISPLAY/u:GTK_THEME/u
     ```
 
-    `DISPLAY` here needs to match the IP that your WSL distro uses
+    `DISPLAY` here needs to match the IP that your WSL distro uses; you can
+    retrieve this from `/etc/resolv.conf` on the distro instance
 4.  Run the generator:
     ```powershell
     ./generator.ps1 gedit
