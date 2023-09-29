@@ -7,7 +7,8 @@ create Windows shortcuts (including on the Start menu) which will launch
 graphical Linux applications which behave exactly like native Windows apps.
 
 It is inspired by the relevant [X410 cookbook
-documentation](https://x410.dev/cookbook/wsl/opening-linux-terminal-directly-from-file-explorer/) but has some improvements:
+documentation](https://x410.dev/cookbook/wsl/opening-linux-terminal-directly-from-file-explorer/)
+but has some improvements:
 
 1.  The solution uses the special `WSLENV` mechanism in new WSL2 builds to
     handle `DISPLAY` forwarding and other environment variables instead of
@@ -25,11 +26,15 @@ documentation](https://x410.dev/cookbook/wsl/opening-linux-terminal-directly-fro
 
 ## Setup
 
-1.  Install whatever package is to have the shortcut created (using e.g. `apt`)
-2.  Install a nice GTK theme, e.g. `Arc` (`sudo apt install arc-theme`)
-3.  Add `DISPLAY` and `GTK_THEME` Windows environment variables and then export
+1.  Ensure that the distro you've selected is set to the WSL default (using
+    `wsl -s`).
+2.  Install whatever package is to have the shortcut created (using e.g.
+    `apt`).
+3.  Install a nice GTK theme, e.g. `Arc` (`sudo apt install arc-theme`)
+4.  Add `DISPLAY` and `GTK_THEME` Windows environment variables and then export
     them using the magic `WSLENV` variable:
-    ```
+
+    ```sh
     GTK_THEME=Arc:dark
     DISPLAY=172.29.192.1:0.0
     WSLENV=DISPLAY/u:GTK_THEME/u
@@ -37,7 +42,8 @@ documentation](https://x410.dev/cookbook/wsl/opening-linux-terminal-directly-fro
 
     `DISPLAY` here needs to match the IP that your WSL distro uses; you can
     retrieve this from `/etc/resolv.conf` on the distro instance
-4.  Run the generator:
+5.  Run the generator:
+
     ```powershell
     ./generator.ps1 gedit
     ```
@@ -46,9 +52,10 @@ documentation](https://x410.dev/cookbook/wsl/opening-linux-terminal-directly-fro
     complicated than a binary on `$PATH`:
 
     ```powershell
-     ./generator.ps1 pycharm '"nohup ~/pycharm-community-2020.2.1/bin/pycharm.sh >/dev/null 2>&1"'
-     ```
-5.  Right-click your shortcut and select `Pin to Start`
+    ./generator.ps1 pycharm '"nohup ~/pycharm-community-2020.2.1/bin/pycharm.sh >/dev/null 2>&1"'
+    ```
+
+6.  Right-click your shortcut and select `Pin to Start`
 
 ## TODO
 
